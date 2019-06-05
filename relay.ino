@@ -8,8 +8,10 @@
 #define ON true
 #define OFF false
 
-// pin 2 is the WiFi LED, but can be used as GPIO too
-const int pins[] = {5, 4, 0, 14, 12, 2, 10, 9};
+// pin 0 is the flash pin, but can be used as GPIO
+// pin 2 is the WiFi LED, but can be used as GPIO
+// pin 9 is unusable and crashes the board
+const int pins[] = {5, 4, 0, 14, 12, 2, 10, 13};
 
 // number of relays
 const int pinsLen = 8;
