@@ -48,7 +48,7 @@ void setup()
   Serial.println(WiFi.localIP());
 
   server.on("/off", turnOff);
-  server.on("/on", turnOff);
+  server.on("/on", turnOn);
   server.on("/toggle", toggle);
   server.onNotFound(notFound);
 
@@ -108,9 +108,9 @@ void turnOn()
 
   relays[pin].turnOn();
 
-  String message = String("200: Relay " + server.arg("relay") + " off");
+  String message = String("200: Relay " + server.arg("relay") + " on");
   Serial.println(message);
-  String response = String("{ \"id\":\"" + server.arg("relay") + "\",\"state\":\"off\"}");
+  String response = String("{ \"id\":\"" + server.arg("relay") + "\",\"state\":\"on\"}");
   server.send(200, "application/json", response);
 }
 

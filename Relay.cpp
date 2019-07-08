@@ -14,7 +14,7 @@ Relay::Relay(int p, bool s)
 void Relay::turnOn()
 {
   digitalWrite(pin, LOW);
-  state = ON; 
+  state = ON;
 }
 
 void Relay::turnOff()
